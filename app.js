@@ -20,7 +20,7 @@ themeToggler.onclick = function() {
 }
 
 let setData = (day) =>{
-    document.querySelector('table tbody').innerHTML = ' '; //To clear out previous table data;  
+    document.querySelector('table tbody').innerHTML = ' '; 
     let daylist = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
     document.querySelector('.timetable div h2').innerHTML = daylist[day];
     switch(day){
@@ -47,8 +47,8 @@ let setData = (day) =>{
 }
 
 let now = new Date();
-let today = now.getDay(); // Will return the present day in numerical value; 
-let day = today; //To prevent the today value from changing;
+let today = now.getDay(); 
+let day = today;
 
 function timeTableAll(){
     document.getElementById('timetable').classList.toggle('active');
@@ -56,7 +56,7 @@ function timeTableAll(){
     document.querySelector('.timetable div h2').innerHTML = "Today's Schedule";
 }
 nextDay.onclick = function() {
-    day<=5 ? day++ : day=0;  // If else one liner
+    day<=5 ? day++ : day=0; 
     setData(day);
 }
 prevDay.onclick = function() {
@@ -64,5 +64,5 @@ prevDay.onclick = function() {
     setData(day);
 }
 
-setData(day); //To set the data in the table on loading window.
-document.querySelector('.timetable div h2').innerHTML = "Today's Schedule"; //To prevent overwriting the heading on loading;
+setData(day);
+document.querySelector('.timetable div h2').innerHTML = "Today's Schedule"; 
